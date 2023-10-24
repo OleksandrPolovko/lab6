@@ -83,12 +83,36 @@ namespace Lab6
 
             Console.ReadKey();
         }
-
-        static void Main(string[] args)
+        
+            static void Task4()
         {
-            //Task1();
+            GraphicsEditor editor = new GraphicsEditor();
+
+            Circle circle = new Circle { X = 10, Y = 20, Radius = 5 };
+            Rectangle rectangle = new Rectangle { X = 30, Y = 40, Width = 8, Height = 6 };
+            Triangle triangle = new Triangle { X = 50, Y = 60 };
+
+            editor.AddPrimitive(circle);
+            editor.AddPrimitive(rectangle);
+            editor.AddPrimitive(triangle);
+
+            Group group = new Group { X = 5, Y = 5 };
+            Circle circle2 = new Circle { X = 1, Y = 2, Radius = 3 };
+            Rectangle rectangle2 = new Rectangle { X = 2, Y = 3, Width = 4, Height = 2 };
+            editor.GroupPrimitives(group, new GraphicPrimitive[] { circle2, rectangle2 });
+
+            editor.DrawAll();
+            editor.ScaleAll(2.0f);
+            editor.DrawAll();
+
+            Console.ReadKey();
+        }
+    
+             static void Main(string[] args)
+        {
+            Task1();
             //Task2();
-            Task3();
+            //Task3();
             //Task4();
 
             // delay to read from screen
