@@ -9,7 +9,7 @@ namespace Lab6
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Task1()
         {
             TransportNetwork network = new TransportNetwork();
 
@@ -31,5 +31,33 @@ namespace Lab6
 
             Console.ReadKey();
         }
+
+            static void Task2()
+
+        {
+            MathOperations math = new MathOperations();
+
+            int sum = math.Add(8, 5);
+            int diff = math.Subtract(10, 4);
+            int product = math.Multiply(5, 5);
+
+            Console.WriteLine("Sum: " + sum);
+            Console.WriteLine("Difference: " + diff);
+            Console.WriteLine("Product: " + product);
+
+            Console.ReadKey();
+        }
+        static void Main (string[] args)
+        {
+            //Task1();
+            //Task2();
+            //Task3();
+            //Task4();
+
+            // delay to read from screen
+            Console.WriteLine("Press any key to finnish this program...");
+            Console.Read();
+        }
     }
 }
+
