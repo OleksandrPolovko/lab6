@@ -32,7 +32,7 @@ namespace Lab6
             Console.ReadKey();
         }
 
-            static void Task2()
+        static void Task2()
 
         {
             MathOperations math = new MathOperations();
@@ -47,11 +47,48 @@ namespace Lab6
 
             Console.ReadKey();
         }
-        static void Main (string[] args)
+
+        static void Task3()
+
+        {
+            Quaternion q1 = new Quaternion(1.0, 2.0, 3.0, 4.0);
+            Quaternion q2 = new Quaternion(2.0, 3.0, 4.0, 5.0);
+
+            Quaternion sum = q1 + q2;
+            Quaternion difference = q1 - q2;
+            Quaternion product = q1 * q2;
+            double norm = q1.Norm();
+            Quaternion conjugate = q1.Conjugate();
+            Quaternion inverse = q1.Inverse();
+            bool areEqual = (q1 == q2);
+
+            Console.WriteLine("Sum: " + sum);
+            Console.WriteLine("Difference: " + difference);
+            Console.WriteLine("Product: " + product);
+            Console.WriteLine("Norm of q1: " + norm);
+            Console.WriteLine("Conjugate of q1: " + conjugate);
+            Console.WriteLine("Inverse of q1: " + inverse);
+            Console.WriteLine("Are q1 and q2 equal? " + areEqual);
+
+            double[,] rotationMatrix = q1.ToRotationMatrix();
+            Console.WriteLine("Rotation Matrix of q1:");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(rotationMatrix[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
+        }
+
+        static void Main(string[] args)
         {
             //Task1();
             //Task2();
-            //Task3();
+            Task3();
             //Task4();
 
             // delay to read from screen
@@ -60,4 +97,5 @@ namespace Lab6
         }
     }
 }
+
 
